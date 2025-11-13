@@ -55,7 +55,7 @@ const CategoryChart = ({ categories }) => {
 
   return (
     <div className="chart-container">
-      <h3 className="chart-title">Spending by Category</h3>
+      <h3 className="chart-title">Gastos por categoría</h3>
       <div style={{ position: 'relative', height: '300px' }}>
         {categories && categories.length > 0 ? (
           <canvas ref={chartRef}></canvas>

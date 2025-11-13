@@ -16,11 +16,23 @@ const IncomeExpenseChart = ({ data }) => {
 
     const ctx = chartRef.current.getContext('2d');
 
-    // Datos de ejemplo (puedes reemplazar con datos reales del backend)
-    const monthlyData = [
-      { month: 'Oct', income: 1800, expense: 1200 },
-      { month: 'Nov', income: data.monthly_income || 0, expense: data.monthly_expenses || 0 }
-    ];
+    // Construir datos mensuales a partir del backend cuando exista
+    let monthlyData = [];
+
+    // Si el backend ya devuelve una serie mensual (ej. data.monthly_trend), úsala
+    if (Array.isArray(data?.monthly_trend) && data.monthly_trend.length > 0) {
+      monthlyData = data.monthly_trend.map(d => ({
+        month: d.month,
+        income: d.income || 0,
+        expense: d.expense || 0
+      }));
+    } else {
+      // Si no hay serie, mostrar solo el mes actual con los totales disponibles
+      const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const now = new Date();
+      const currentMonth = monthNames[now.getMonth()];
+      monthlyData = [{ month: currentMonth, income: data.monthly_income || 0, expense: data.monthly_expenses || 0 }];
+    }
 
     chartInstance.current = new Chart(ctx, {
       type: 'bar',
@@ -84,7 +96,7 @@ const IncomeExpenseChart = ({ data }) => {
 
   return (
     <div className="chart-container">
-      <h3 className="chart-title">Income vs. Expenses</h3>
+      <h3 className="chart-title">Ingresos vs. Gastos</h3>
       <div style={{ position: 'relative', height: '300px' }}>
         <canvas ref={chartRef}></canvas>
       </div>

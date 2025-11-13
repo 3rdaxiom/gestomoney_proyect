@@ -21,6 +21,23 @@ const DashboardPage = () => {
     loadDashboardData();
   }, []);
 
+  // Escuchar cambios globales de transacciones para refrescar el dashboard
+  useEffect(() => {
+    const handleTransactionsChanged = () => {
+      loadDashboardData();
+    };
+
+    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+      window.addEventListener('transactions:changed', handleTransactionsChanged);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined' && typeof window.removeEventListener === 'function') {
+        window.removeEventListener('transactions:changed', handleTransactionsChanged);
+      }
+    };
+  }, []);
+
   const loadDashboardData = async () => {
     try {
       setLoading(true);

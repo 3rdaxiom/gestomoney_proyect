@@ -33,7 +33,7 @@ const SummaryCards = ({ summary }) => {
       </div>
 
       <div className="summary-card">
-        <span className="card-title">Monthly Expenses</span>
+        <span className="card-title">Gastos mensuales</span>
         <span className="card-value expense">
           {formatCurrency(monthly_expenses)}
         </span>
