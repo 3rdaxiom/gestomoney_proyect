@@ -298,6 +298,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </div>
+            
           </div>
 	            <div className="settings-section">
             <div className="settings-section-header" onClick={() => toggleSection('appearance')}>
@@ -346,7 +347,8 @@ const SettingsPage = () => {
               </form>
             </div>
           </div>
-
+          
+{/* 
           <div className="settings-section">
             <div className="settings-section-header" onClick={() => toggleSection('security')}>
               <div className="settings-section-header-left">
@@ -387,7 +389,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="settings-section">
             <div className="settings-section-header" onClick={() => toggleSection('data')}>
