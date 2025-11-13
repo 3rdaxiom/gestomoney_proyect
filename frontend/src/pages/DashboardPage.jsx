@@ -44,7 +44,7 @@ const DashboardPage = () => {
   if (loading) {
     return (
       <DashboardLayout>
-        <Header subtitle="Here's a summary of your financial activity." />
+  <Header subtitle="Resumen de tu actividad financiera." />
 
         <section className="dashboard-content">
           {/* Skeleton de tarjetas */}
@@ -82,7 +82,7 @@ const DashboardPage = () => {
   return (
     <DashboardLayout>
       <Header 
-        subtitle="Here's a summary of your financial activity."
+        subtitle="Resumen de tu actividad financiera."
         showFilters={true}
       />
 

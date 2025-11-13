@@ -68,7 +68,7 @@ const Sidebar = () => {
             className={`nav-item ${isActive('/dashboard') ? 'active' : ''}`}
           >
             <span className="icon">🏠</span>
-            Dashboard
+            Panel
           </Link>
 
           <Link 
@@ -102,12 +102,12 @@ const Sidebar = () => {
           className={`nav-item ${isActive('/settings') ? 'active' : ''}`}
         >
           <span className="icon">⚙️</span>
-          Settings
+          Configuración
         </Link>
 
         <div className="nav-item" onClick={logout}>
           <span className="icon">🚪</span>
-          Logout
+          Cerrar sesión
         </div>
       </div>
     </aside>

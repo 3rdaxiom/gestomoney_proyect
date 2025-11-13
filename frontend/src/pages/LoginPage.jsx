@@ -52,7 +52,7 @@ const LoginPage = () => {
         <div className="auth-info-panel">
           <div className="logo">Gestomoney</div>
           <p className="tagline">
-            Clarity for your finances. Take control of your money.
+            Claridad para tus finanzas. Toma el control de tu dinero.
           </p>
           <div className="auth-image-placeholder">
             <div style={{
@@ -72,19 +72,19 @@ const LoginPage = () => {
 
         {/* Panel Derecho - Formulario */}
         <div className="auth-form-panel">
-          <h2 className="auth-title">Welcome Back</h2>
+          <h2 className="auth-title">Bienvenido de nuevo</h2>
           <p className="auth-subtitle">
-            Enter your credentials to access your account.
+            Introduce tus credenciales para acceder a tu cuenta.
           </p>
 
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">Correo electrónico</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="Introduce tu correo electrónico"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -92,13 +92,13 @@ const LoginPage = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Contraseña</label>
               <div className="password-input-group">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   name="password"
-                  placeholder="Enter your password"
+                  placeholder="Introduce tu contraseña"
                   value={formData.password}
                   onChange={handleChange}
                   required
@@ -121,10 +121,10 @@ const LoginPage = () => {
                   checked={formData.rememberMe}
                   onChange={handleChange}
                 />
-                Remember me
+                Recordarme
               </label>
               <a href="#" className="forgot-password-link">
-                Forgot Password?
+                ¿Olvidaste tu contraseña?
               </a>
             </div>
 
@@ -133,11 +133,11 @@ const LoginPage = () => {
               className="btn btn-login-primary"
               disabled={loading}
             >
-              {loading ? 'Logging in...' : 'Log In'}
+              {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}
             </button>
 
             <div className="form-footer">
-              Don't have an account? <Link to="/register">Sign Up</Link>
+              ¿No tienes una cuenta? <Link to="/register">Regístrate</Link>
             </div>
           </form>
         </div>

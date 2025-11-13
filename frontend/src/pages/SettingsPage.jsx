@@ -115,7 +115,7 @@ const SettingsPage = () => {
 
   return (
     <DashboardLayout>
-      <Header title="Settings" subtitle="Manage your account settings and preferences" />
+  <Header title="Configuración" subtitle="Administra los ajustes y preferencias de tu cuenta" />
       <section className="dashboard-content">
         <div className="settings-container">
           
@@ -124,8 +124,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">👤</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Profile Information</h2>
-                  <p className="settings-section-description">Update your account profile information and email address</p>
+                  <h2 className="settings-section-title">Información de perfil</h2>
+                  <p className="settings-section-description">Actualiza la información de tu cuenta y tu correo electrónico</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.profile ? '' : 'collapsed'}`}>▼</span>
@@ -137,40 +137,40 @@ const SettingsPage = () => {
                   <h3>{profileData.fullName}</h3>
                   <p>{profileData.email}</p>
                 </div>
-                <div className="settings-avatar-actions">
-                  <button className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>Change Photo</button>
-                  <button className="btn btn-text" style={{ fontSize: '0.9rem' }}>Remove</button>
+                  <div className="settings-avatar-actions">
+                  <button className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>Cambiar foto</button>
+                  <button className="btn btn-text" style={{ fontSize: '0.9rem' }}>Eliminar</button>
                 </div>
               </div>
               <form className="settings-form">
                 <div className="settings-form-row">
                   <div className="settings-form-group">
-                    <label htmlFor="fullName">Full Name</label>
+                    <label htmlFor="fullName">Nombre completo</label>
                     <input type="text" id="fullName" name="fullName" value={profileData.fullName} onChange={handleProfileChange} />
                   </div>
                   <div className="settings-form-group">
-                    <label htmlFor="email">Email Address</label>
+                    <label htmlFor="email">Correo electrónico</label>
                     <input type="email" id="email" name="email" value={profileData.email} onChange={handleProfileChange} />
                   </div>
                 </div>
                 <div className="settings-form-group">
-                  <label htmlFor="currentPassword">Current Password</label>
-                  <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password to change it" value={profileData.currentPassword} onChange={handleProfileChange} />
+                  <label htmlFor="currentPassword">Contraseña actual</label>
+                  <input type="password" id="currentPassword" name="currentPassword" placeholder="Introduce la contraseña actual para cambiarla" value={profileData.currentPassword} onChange={handleProfileChange} />
                 </div>
                 <div className="settings-form-row">
                   <div className="settings-form-group">
-                    <label htmlFor="newPassword">New Password</label>
-                    <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" value={profileData.newPassword} onChange={handleProfileChange} />
-                    <small>Minimum 8 characters with uppercase, lowercase and numbers</small>
+                    <label htmlFor="newPassword">Nueva contraseña</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Introduce nueva contraseña" value={profileData.newPassword} onChange={handleProfileChange} />
+                    <small>Mínimo 8 caracteres con mayúsculas, minúsculas y números</small>
                   </div>
                   <div className="settings-form-group">
-                    <label htmlFor="confirmPassword">Confirm New Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" value={profileData.confirmPassword} onChange={handleProfileChange} />
+                    <label htmlFor="confirmPassword">Confirmar nueva contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma nueva contraseña" value={profileData.confirmPassword} onChange={handleProfileChange} />
                   </div>
                 </div>
                 <div className="settings-actions">
-                  <button type="button" className="btn btn-text">Cancel</button>
-                  <button type="button" className="btn btn-primary" onClick={handleSaveProfile}>Save Changes</button>
+                  <button type="button" className="btn btn-text">Cancelar</button>
+                  <button type="button" className="btn btn-primary" onClick={handleSaveProfile}>Guardar cambios</button>
                 </div>
               </form>
             </div>
@@ -181,8 +181,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">⚙️</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Application Preferences</h2>
-                  <p className="settings-section-description">Customize how you view and interact with the application</p>
+                  <h2 className="settings-section-title">Preferencias de la aplicación</h2>
+                  <p className="settings-section-description">Personaliza cómo ves e interactúas con la aplicación</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.preferences ? '' : 'collapsed'}`}>▼</span>
@@ -191,7 +191,7 @@ const SettingsPage = () => {
               <form className="settings-form">
                 <div className="settings-form-row">
                   <div className="settings-form-group">
-                    <label htmlFor="language">Language</label>
+                    <label htmlFor="language">Idioma</label>
                     <select id="language" name="language" value={preferences.language} onChange={handlePreferenceChange}>
                       <option value="en">English</option>
                       <option value="es">Español</option>
@@ -200,7 +200,7 @@ const SettingsPage = () => {
                     </select>
                   </div>
                   <div className="settings-form-group">
-                    <label htmlFor="currency">Default Currency</label>
+                    <label htmlFor="currency">Moneda predeterminada</label>
                     <select id="currency" name="currency" value={preferences.currency} onChange={handlePreferenceChange}>
                       <option value="USD">USD - US Dollar</option>
                       <option value="EUR">EUR - Euro</option>
@@ -212,7 +212,7 @@ const SettingsPage = () => {
                 </div>
                 <div className="settings-form-row">
                   <div className="settings-form-group">
-                    <label htmlFor="dateFormat">Date Format</label>
+                    <label htmlFor="dateFormat">Formato de fecha</label>
                     <select id="dateFormat" name="dateFormat" value={preferences.dateFormat} onChange={handlePreferenceChange}>
                       <option value="DD/MM/YYYY">DD/MM/YYYY</option>
                       <option value="MM/DD/YYYY">MM/DD/YYYY</option>
@@ -220,7 +220,7 @@ const SettingsPage = () => {
                     </select>
                   </div>
                   <div className="settings-form-group">
-                    <label htmlFor="timezone">Timezone</label>
+                    <label htmlFor="timezone">Zona horaria</label>
                     <select id="timezone" name="timezone" value={preferences.timezone} onChange={handlePreferenceChange}>
                       <option value="America/New_York">Eastern Time (ET)</option>
                       <option value="America/Chicago">Central Time (CT)</option>
@@ -233,8 +233,8 @@ const SettingsPage = () => {
                   </div>
                 </div>
                 <div className="settings-actions">
-                  <button type="button" className="btn btn-text">Reset to Default</button>
-                  <button type="button" className="btn btn-primary" onClick={handleSavePreferences}>Save Preferences</button>
+                  <button type="button" className="btn btn-text">Restablecer valores predeterminados</button>
+                  <button type="button" className="btn btn-primary" onClick={handleSavePreferences}>Guardar preferencias</button>
                 </div>
               </form>
             </div>
@@ -245,8 +245,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">🔔</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Notifications</h2>
-                  <p className="settings-section-description">Manage how you receive notifications and alerts</p>
+                  <h2 className="settings-section-title">Notificaciones</h2>
+                  <p className="settings-section-description">Gestiona cómo recibes notificaciones y alertas</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.notifications ? '' : 'collapsed'}`}>▼</span>
@@ -255,8 +255,8 @@ const SettingsPage = () => {
               <div className="settings-form">
                 <div className="settings-toggle-group">
                   <div className="settings-toggle-info">
-                    <span className="settings-toggle-label">Email Notifications</span>
-                    <span className="settings-toggle-description">Receive email updates about your account activity</span>
+                    <span className="settings-toggle-label">Notificaciones por correo</span>
+                    <span className="settings-toggle-description">Recibe actualizaciones por correo sobre la actividad de tu cuenta</span>
                   </div>
                   <label className="switch">
                     <input type="checkbox" checked={notifications.emailNotifications} onChange={() => handleNotificationToggle('emailNotifications')} />
@@ -265,8 +265,8 @@ const SettingsPage = () => {
                 </div>
                 <div className="settings-toggle-group">
                   <div className="settings-toggle-info">
-                    <span className="settings-toggle-label">Push Notifications</span>
-                    <span className="settings-toggle-description">Receive push notifications on your device</span>
+                    <span className="settings-toggle-label">Notificaciones push</span>
+                    <span className="settings-toggle-description">Recibe notificaciones push en tu dispositivo</span>
                   </div>
                   <label className="switch">
                     <input type="checkbox" checked={notifications.pushNotifications} onChange={() => handleNotificationToggle('pushNotifications')} />
@@ -275,8 +275,8 @@ const SettingsPage = () => {
                 </div>
                 <div className="settings-toggle-group">
                   <div className="settings-toggle-info">
-                    <span className="settings-toggle-label">Budget Alerts</span>
-                    <span className="settings-toggle-description">Get notified when approaching budget limits</span>
+                    <span className="settings-toggle-label">Alertas de presupuesto</span>
+                    <span className="settings-toggle-description">Recibe notificaciones al acercarte a los límites del presupuesto</span>
                   </div>
                   <label className="switch">
                     <input type="checkbox" checked={notifications.budgetAlerts} onChange={() => handleNotificationToggle('budgetAlerts')} />
@@ -285,8 +285,8 @@ const SettingsPage = () => {
                 </div>
                 <div className="settings-toggle-group">
                   <div className="settings-toggle-info">
-                    <span className="settings-toggle-label">Weekly Report</span>
-                    <span className="settings-toggle-description">Receive a weekly summary of your financial activity</span>
+                    <span className="settings-toggle-label">Resumen semanal</span>
+                    <span className="settings-toggle-description">Recibe un resumen semanal de tu actividad financiera</span>
                   </div>
                   <label className="switch">
                     <input type="checkbox" checked={notifications.weeklyReport} onChange={() => handleNotificationToggle('weeklyReport')} />
@@ -294,7 +294,7 @@ const SettingsPage = () => {
                   </label>
                 </div>
                 <div className="settings-actions">
-                  <button type="button" className="btn btn-primary" onClick={handleSaveNotifications}>Save Notification Settings</button>
+                  <button type="button" className="btn btn-primary" onClick={handleSaveNotifications}>Guardar configuración de notificaciones</button>
                 </div>
               </div>
             </div>
@@ -304,8 +304,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">🎨</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Appearance</h2>
-                  <p className="settings-section-description">Customize the look and feel of the application</p>
+                  <h2 className="settings-section-title">Apariencia</h2>
+                  <p className="settings-section-description">Personaliza el aspecto y la apariencia de la aplicación</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.appearance ? '' : 'collapsed'}`}>▼</span>
@@ -313,35 +313,35 @@ const SettingsPage = () => {
             <div className={`settings-section-content ${expandedSections.appearance ? 'expanded' : ''}`}>
               <form className="settings-form">
                 <div className="settings-form-group">
-                  <label htmlFor="theme">Theme</label>
+                  <label htmlFor="theme">Tema</label>
                   <select id="theme" name="theme" value={appearance.theme} onChange={handleAppearanceChange}>
-                    <option value="dark">Dark Mode</option>
-                    <option value="light">Light Mode</option>
-                    <option value="auto">Auto (System)</option>
+                    <option value="dark">Modo oscuro</option>
+                    <option value="light">Modo claro</option>
+                    <option value="auto">Automático (sistema)</option>
                   </select>
-                  <small>Choose your preferred color scheme</small>
+                  <small>Elige tu esquema de color preferido</small>
                 </div>
                 <div className="settings-form-row">
                   <div className="settings-form-group">
-                    <label htmlFor="fontSize">Font Size</label>
+                    <label htmlFor="fontSize">Tamaño de fuente</label>
                     <select id="fontSize" name="fontSize" value={appearance.fontSize} onChange={handleAppearanceChange}>
-                      <option value="small">Small</option>
-                      <option value="medium">Medium</option>
-                      <option value="large">Large</option>
+                      <option value="small">Pequeño</option>
+                      <option value="medium">Mediano</option>
+                      <option value="large">Grande</option>
                     </select>
                   </div>
                   <div className="settings-form-group">
-                    <label htmlFor="density">Information Density</label>
+                    <label htmlFor="density">Densidad de información</label>
                     <select id="density" name="density" value={appearance.density} onChange={handleAppearanceChange}>
-                      <option value="compact">Compact</option>
-                      <option value="comfortable">Comfortable</option>
-                      <option value="spacious">Spacious</option>
+                      <option value="compact">Compacto</option>
+                      <option value="comfortable">Cómodo</option>
+                      <option value="spacious">Espacioso</option>
                     </select>
                   </div>
                 </div>
                 <div className="settings-actions">
-                  <button type="button" className="btn btn-text">Reset to Default</button>
-                  <button type="button" className="btn btn-primary" onClick={handleSaveAppearance}>Save Appearance</button>
+                  <button type="button" className="btn btn-text">Restablecer valores predeterminados</button>
+                  <button type="button" className="btn btn-primary" onClick={handleSaveAppearance}>Guardar apariencia</button>
                 </div>
               </form>
             </div>
@@ -352,8 +352,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">🔒</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Privacy & Security</h2>
-                  <p className="settings-section-description">Manage your security settings and privacy preferences</p>
+                  <h2 className="settings-section-title">Privacidad y seguridad</h2>
+                  <p className="settings-section-description">Gestiona la seguridad y privacidad de tu cuenta</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.security ? '' : 'collapsed'}`}>▼</span>
@@ -362,28 +362,28 @@ const SettingsPage = () => {
               <div className="settings-form">
                 <div className="settings-toggle-group">
                   <div className="settings-toggle-info">
-                    <span className="settings-toggle-label">Two-Factor Authentication (2FA)</span>
-                    <span className="settings-toggle-description">Add an extra layer of security to your account</span>
+                    <span className="settings-toggle-label">Autenticación de dos factores (2FA)</span>
+                    <span className="settings-toggle-description">Añade una capa extra de seguridad a tu cuenta</span>
                   </div>
-                  <button className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>Enable 2FA</button>
+                  <button className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>Activar 2FA</button>
                 </div>
                 <div className="settings-form-group" style={{ marginTop: 'var(--spacing-md)' }}>
-                  <label>Active Sessions</label>
+                  <label>Sesiones activas</label>
                   <div style={{ backgroundColor: '#2c3444', padding: '12px', borderRadius: '6px', marginTop: '8px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <div>
                         <p style={{ fontWeight: 500, marginBottom: '4px' }}>💻 Windows - Chrome</p>
-                        <p style={{ fontSize: '0.85rem', color: '#9fa6ad' }}>Current session • Last active: Just now</p>
+                        <p style={{ fontSize: '0.85rem', color: '#9fa6ad' }}>Sesión actual • Última actividad: justo ahora</p>
                       </div>
-                      <span style={{ color: 'var(--color-success)', fontSize: '0.85rem', fontWeight: 500 }}>Active</span>
+                      <span style={{ color: 'var(--color-success)', fontSize: '0.85rem', fontWeight: 500 }}>Activa</span>
                     </div>
                   </div>
-                  <small style={{ display: 'block', marginTop: '8px' }}>You can revoke access to any session at any time</small>
+                  <small style={{ display: 'block', marginTop: '8px' }}>Puedes revocar el acceso a cualquier sesión en cualquier momento</small>
                 </div>
                 <div className="settings-form-group" style={{ marginTop: 'var(--spacing-md)' }}>
-                  <label>Activity Log</label>
-                  <button className="btn btn-secondary" style={{ marginTop: '8px' }}>View Activity History</button>
-                  <small style={{ display: 'block', marginTop: '8px' }}>See all recent activity on your account</small>
+                  <label>Registro de actividad</label>
+                  <button className="btn btn-secondary" style={{ marginTop: '8px' }}>Ver historial de actividad</button>
+                  <small style={{ display: 'block', marginTop: '8px' }}>Ver toda la actividad reciente de tu cuenta</small>
                 </div>
               </div>
             </div>
@@ -394,8 +394,8 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">📦</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Data & Export</h2>
-                  <p className="settings-section-description">Download your data or manage your account</p>
+                  <h2 className="settings-section-title">Datos y exportación</h2>
+                  <p className="settings-section-description">Descarga tus datos o gestiona tu cuenta</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.data ? '' : 'collapsed'}`}>▼</span>
@@ -405,20 +405,20 @@ const SettingsPage = () => {
                 <div className="settings-form-group">
                   <label>Export Your Data</label>
                   <p style={{ fontSize: '0.9rem', color: '#9fa6ad', marginBottom: '12px' }}>
-                    Download a copy of your transactions, categories, and account information
+                    Descarga una copia de tus transacciones, categorías e información de la cuenta
                   </p>
                   <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                    <button className="btn btn-secondary" onClick={() => handleExportData('CSV')}>📄 Export as CSV</button>
-                    <button className="btn btn-secondary" onClick={() => handleExportData('JSON')}>📋 Export as JSON</button>
-                    <button className="btn btn-secondary" onClick={() => handleExportData('PDF')}>📑 Export as PDF</button>
+                    <button className="btn btn-secondary" onClick={() => handleExportData('CSV')}>📄 Exportar como CSV</button>
+                    <button className="btn btn-secondary" onClick={() => handleExportData('JSON')}>📋 Exportar como JSON</button>
+                    <button className="btn btn-secondary" onClick={() => handleExportData('PDF')}>📑 Exportar como PDF</button>
                   </div>
                 </div>
                 <div className="settings-form-group" style={{ marginTop: 'var(--spacing-lg)' }}>
                   <label>Download Complete Report</label>
                   <p style={{ fontSize: '0.9rem', color: '#9fa6ad', marginBottom: '12px' }}>
-                    Generate a comprehensive report of all your financial data
+                    Genera un informe completo de todos tus datos financieros
                   </p>
-                  <button className="btn btn-primary">📊 Generate Full Report</button>
+                  <button className="btn btn-primary">📊 Generar informe completo</button>
                 </div>
               </div>
             </div>
@@ -428,20 +428,20 @@ const SettingsPage = () => {
               <div className="settings-section-header-left">
                 <span className="settings-section-icon">⚠️</span>
                 <div className="settings-section-info">
-                  <h2 className="settings-section-title">Danger Zone</h2>
-                  <p className="settings-section-description">Irreversible and destructive actions</p>
+                  <h2 className="settings-section-title">Zona de peligro</h2>
+                  <p className="settings-section-description">Acciones irreversibles y destructivas</p>
                 </div>
               </div>
               <span className={`settings-section-toggle ${expandedSections.danger ? '' : 'collapsed'}`}>▼</span>
             </div>
             <div className={`settings-section-content ${expandedSections.danger ? 'expanded' : ''}`}>
               <div className="settings-danger-zone">
-                <h4>Delete Account</h4>
+                <h4>Eliminar cuenta</h4>
                 <p>
-                  Once you delete your account, there is no going back. All your data will be 
-                  permanently deleted. Please be certain.
+                  Una vez que elimines tu cuenta, no hay vuelta atrás. Todos tus datos serán 
+                  eliminados permanentemente. Por favor, asegúrate antes de continuar.
                 </p>
-                <button className="btn-danger" onClick={handleDeleteAccount}>🗑️ Delete My Account</button>
+                <button className="btn-danger" onClick={handleDeleteAccount}>🗑️ Eliminar mi cuenta</button>
               </div>
             </div>
           </div>

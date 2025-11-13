@@ -50,19 +50,19 @@ const TransactionFilters = ({ categories, onFilterChange, resultsCount }) => {
     <div className="search-filter-bar">
       <input
         type="text"
-        placeholder="Search by description or amount..."
+        placeholder="Buscar por descripción o monto..."
         value={filters.search}
         onChange={handleSearchChange}
       />
 
       <select value={filters.type} onChange={handleTypeChange}>
-        <option value="">All Types</option>
-        <option value="INCOME">Income</option>
-        <option value="EXPENSE">Expense</option>
+        <option value="">Todos los tipos</option>
+        <option value="INCOME">Ingreso</option>
+        <option value="EXPENSE">Gasto</option>
       </select>
 
       <select value={filters.category_id} onChange={handleCategoryChange}>
-        <option value="">All Categories</option>
+        <option value="">Todas las categorías</option>
         {categories.map((cat) => (
           <option key={cat.id} value={cat.id}>
             {cat.name}
@@ -76,13 +76,13 @@ const TransactionFilters = ({ categories, onFilterChange, resultsCount }) => {
           onClick={handleClearFilters}
           style={{ padding: '10px 15px' }}
         >
-          Clear Filters
+          Borrar filtros
         </button>
       )}
 
       {resultsCount !== null && (
         <span style={{ color: '#9fa6ad', fontSize: '0.9rem', marginLeft: '10px' }}>
-          {resultsCount} {resultsCount === 1 ? 'result' : 'results'}
+          {resultsCount} {resultsCount === 1 ? 'resultado' : 'resultados'}
         </span>
       )}
     </div>

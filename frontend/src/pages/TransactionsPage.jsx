@@ -127,8 +127,8 @@ const TransactionsPage = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
-        <Header title="Transaction History" />
+    <DashboardLayout>
+      <Header title="Historial de transacciones" />
 
         <section className="dashboard-content">
           {/* Skeleton de filtros */}
@@ -148,7 +148,7 @@ const TransactionsPage = () => {
   return (
     <DashboardLayout>
       <Header 
-        title="Transaction History"
+        title="Historial de transacciones"
         onQuickAdd={handleQuickAdd}
       />
 

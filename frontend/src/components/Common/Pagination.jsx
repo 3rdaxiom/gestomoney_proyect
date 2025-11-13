@@ -60,11 +60,11 @@ const Pagination = ({
     <div className="pagination-container">
       <div className="pagination-info">
         <span>
-          Showing {startItem}-{endItem} of {totalItems} transactions
+          Mostrando {startItem}-{endItem} de {totalItems} transacciones
         </span>
         
         <div className="items-per-page">
-          <label htmlFor="itemsPerPage">Items per page:</label>
+          <label htmlFor="itemsPerPage">Elementos por página:</label>
           <select 
             id="itemsPerPage"
             value={itemsPerPage}
@@ -84,7 +84,7 @@ const Pagination = ({
           onClick={handleFirst}
           disabled={currentPage === 1}
         >
-          ⏮️ First
+          ⏮️ Primero
         </button>
         
         <button 
@@ -92,7 +92,7 @@ const Pagination = ({
           onClick={handlePrevious}
           disabled={currentPage === 1}
         >
-          ◀️ Previous
+          ◀️ Anterior
         </button>
 
         <div className="pagination-numbers">
@@ -118,7 +118,7 @@ const Pagination = ({
           onClick={handleNext}
           disabled={currentPage === totalPages}
         >
-          Next ▶️
+          Siguiente ▶️
         </button>
         
         <button 
@@ -126,7 +126,7 @@ const Pagination = ({
           onClick={handleLast}
           disabled={currentPage === totalPages}
         >
-          Last ⏭️
+          Último ⏭️
         </button>
       </div>
     </div>

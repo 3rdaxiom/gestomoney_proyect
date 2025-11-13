@@ -6,7 +6,7 @@ const RecentTransactions = ({ transactions }) => {
   if (!transactions || transactions.length === 0) {
     return (
       <div className="transactions-recent-container">
-        <h3 className="chart-title">Recent Transactions</h3>
+        <h3 className="chart-title">Transacciones recientes</h3>
         <p style={{ color: '#9fa6ad', textAlign: 'center', paddingTop: '50px' }}>
           No hay transacciones recientes
         </p>
@@ -19,7 +19,7 @@ const RecentTransactions = ({ transactions }) => {
 
   return (
     <div className="transactions-recent-container">
-      <h3 className="chart-title">Recent Transactions</h3>
+      <h3 className="chart-title">Transacciones recientes</h3>
       <div className="transactions-recent-list">
         {recentTransactions.map((transaction) => (
           <div key={transaction.id} className="transaction-item">
@@ -39,7 +39,7 @@ const RecentTransactions = ({ transactions }) => {
         ))}
 
         <Link to="/transactions" className="view-all-link">
-          View All Transactions &rarr;
+          Ver todas las transacciones &rarr;
         </Link>
       </div>
     </div>

@@ -9,13 +9,13 @@ const LandingPage = () => {
         <div className="container header-content">
           <div className="logo">Gestomoney</div>
           <nav className="nav">
-            <a href="#features" className="nav-link">Features</a>
-            <a href="#testimonials" className="nav-link">Pricing</a>
-            <a href="#about" className="nav-link">About</a>
+            <a href="#features" className="nav-link">Características</a>
+            <a href="#testimonials" className="nav-link">Precios</a>
+            <a href="#about" className="nav-link">Acerca de</a>
           </nav>
           <div className="auth-buttons">
-            <Link to="/login" className="btn btn-text">Log In</Link>
-            <Link to="/register" className="btn btn-primary">Sign Up for Free</Link>
+            <Link to="/login" className="btn btn-text">Iniciar sesión</Link>
+            <Link to="/register" className="btn btn-primary">Regístrate gratis</Link>
           </div>
         </div>
       </header>
@@ -24,9 +24,9 @@ const LandingPage = () => {
         <section className="hero">
           <div className="container hero-content">
             <div className="hero-text">
-              <h1>Take Control of Your Finances, Effortlessly</h1>
-              <p>Gestomoney helps you track income, manage expenses, and monitor your financial health all in one place.</p>
-              <Link to="/register" className="btn btn-primary btn-lg">Sign Up for Free</Link>
+              <h1>Toma el control de tus finanzas, sin esfuerzo</h1>
+              <p>Gestomoney te ayuda a registrar ingresos, gestionar gastos y monitorear tu salud financiera en un solo lugar.</p>
+              <Link to="/register" className="btn btn-primary btn-lg">Regístrate gratis</Link>
             </div>
             <div className="hero-image">
               <div style={{
@@ -40,7 +40,7 @@ const LandingPage = () => {
                 color: '#6c757d',
                 fontSize: '1.2rem'
               }}>
-                📊 Dashboard Preview
+                📊 Vista previa del panel
               </div>
             </div>
           </div>
@@ -48,24 +48,24 @@ const LandingPage = () => {
 
         <section className="features" id="features">
           <div className="container">
-            <h2 className="section-title">Everything You Need for Financial Clarity</h2>
-            <p className="section-subtitle">Our powerful features are designed to give you a complete and intuitive overview of your financial life.</p>
+            <h2 className="section-title">Todo lo que necesitas para tener claridad financiera</h2>
+            <p className="section-subtitle">Nuestras funciones están diseñadas para ofrecerte una visión completa e intuitiva de tu vida financiera.</p>
             
             <div className="features-grid">
               <div className="feature-card">
                 <div className="icon-placeholder">📈</div>
-                <h3>Centralized Tracking</h3>
-                <p>Visualize the full picture of your income and expenses.</p>
+                <h3>Registro centralizado</h3>
+                <p>Visualiza el panorama completo de tus ingresos y gastos.</p>
               </div>
               <div className="feature-card">
                 <div className="icon-placeholder">📊</div>
-                <h3>Insightful Visualizations</h3>
-                <p>Understand your spending habits at a glance.</p>
+                <h3>Visualizaciones intuitivas</h3>
+                <p>Comprende tus hábitos de gasto de un vistazo.</p>
               </div>
               <div className="feature-card">
                 <div className="icon-placeholder">🏷️</div>
-                <h3>Smart Categorization</h3>
-                <p>Classify transactions easily to save you time and gain accurate insights.</p>
+                <h3>Categorización inteligente</h3>
+                <p>Clasifica transacciones fácilmente para ahorrarte tiempo y obtener información precisa.</p>
               </div>
             </div>
           </div>
@@ -73,43 +73,43 @@ const LandingPage = () => {
 
         <section className="visualization-teaser">
           <div className="container">
-            <h2 className="section-title">Visualize Your Spending Habits</h2>
-            <p className="section-subtitle">Our interactive graphs provide clarity and insight into where your money is going, helping you make smarter financial decisions.</p>
-            <div className="visualization-placeholder">📈 Interactive Chart Preview</div>
+            <h2 className="section-title">Visualiza tus hábitos de gasto</h2>
+            <p className="section-subtitle">Nuestros gráficos interactivos proporcionan claridad e información sobre a dónde va tu dinero, ayudándote a tomar decisiones financieras más inteligentes.</p>
+            <div className="visualization-placeholder">📈 Vista previa del gráfico interactivo</div>
           </div>
         </section>
 
         <section className="testimonials" id="testimonials">
           <div className="container">
-            <h2 className="section-title">Loved by Users Worldwide</h2>
+            <h2 className="section-title">Valorado por usuarios de todo el mundo</h2>
             <div className="testimonials-grid">
               <div className="testimonial-card">
-                <p className="quote">"I finally feel organized with my money. Understanding where my income goes is so much clearer, and the visualizations are a game-changer."</p>
+                <p className="quote">"Por fin me siento organizado con mi dinero. Entender a dónde van mis ingresos es mucho más claro y las visualizaciones son un cambio radical."</p>
                 <div className="user-info">
                   <div className="avatar">SL</div>
                   <div>
                     <p className="user-name">Sarah L.</p>
-                    <p className="user-role">Freelance Designer</p>
+                    <p className="user-role">Diseñadora freelance</p>
                   </div>
                 </div>
               </div>
               <div className="testimonial-card">
-                <p className="quote">"Gestomoney has transformed how I manage my finances. The insights are invaluable and the interface is beautiful."</p>
+                <p className="quote">"Gestomoney ha transformado la forma en que administro mis finanzas. Las ideas son invaluables y la interfaz es preciosa."</p>
                 <div className="user-info">
                   <div className="avatar">JD</div>
                   <div>
                     <p className="user-name">John D.</p>
-                    <p className="user-role">Small Business Owner</p>
+                    <p className="user-role">Propietario de pequeña empresa</p>
                   </div>
                 </div>
               </div>
               <div className="testimonial-card">
-                <p className="quote">"Simple, elegant, and powerful. Everything I need to stay on top of my budget in one place."</p>
+                <p className="quote">"Sencillo, elegante y potente. Todo lo que necesito para mantener mi presupuesto bajo control en un solo lugar."</p>
                 <div className="user-info">
                   <div className="avatar">MR</div>
                   <div>
                     <p className="user-name">Maria R.</p>
-                    <p className="user-role">Marketing Manager</p>
+                    <p className="user-role">Gerente de Marketing</p>
                   </div>
                 </div>
               </div>
@@ -119,20 +119,20 @@ const LandingPage = () => {
 
         <section className="final-cta">
           <div className="container final-cta-content">
-            <h2>Ready to achieve financial clarity?</h2>
-            <p>Start your journey with Gestomoney today. It's free to get started and takes less than a minute.</p>
-            <Link to="/register" className="btn btn-secondary btn-lg">Get Started</Link>
+            <h2>¿Listo para lograr claridad financiera?</h2>
+            <p>Comienza hoy con Gestomoney. Es gratis y te toma menos de un minuto.</p>
+            <Link to="/register" className="btn btn-secondary btn-lg">Comenzar</Link>
           </div>
         </section>
       </main>
 
       <footer className="footer">
         <div className="container footer-content">
-          <p>&copy; 2024 Gestomoney. All rights reserved.</p>
+          <p>&copy; 2024 Gestomoney. Todos los derechos reservados.</p>
           <div className="footer-links">
-            <a href="#terms">Terms of Service</a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#contact">Contact</a>
+            <a href="#terms">Términos del servicio</a>
+            <a href="#privacy">Política de privacidad</a>
+            <a href="#contact">Contacto</a>
           </div>
         </div>
       </footer>

@@ -15,12 +15,12 @@ const TransactionTable = ({ transactions, onEdit, onDelete }) => {
       <table className="transactions-table">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Actions</th>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Tipo</th>
+            <th>Monto</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@ const TransactionTable = ({ transactions, onEdit, onDelete }) => {
               <td>{transaction.category_name}</td>
               <td>
                 <span className={transaction.type === 'INCOME' ? 'type-income' : 'type-expense'}>
-                  {transaction.type}
+                  {transaction.type === 'INCOME' ? 'Ingreso' : 'Gasto'}
                 </span>
               </td>
               <td className={transaction.type === 'INCOME' ? 'type-income' : 'type-expense'}>

@@ -29,7 +29,7 @@ const ReportsPage = () => {
   if (loading) {
   return (
     <DashboardLayout>
-      <Header title="Reports" subtitle="Analyze your financial data" />
+      <Header title="Informes" subtitle="Analiza tus datos financieros" />
       <section className="dashboard-content">
         {/* Skeleton para filtros */}
         <div style={{ 
@@ -93,7 +93,7 @@ const ReportsPage = () => {
 
   return (
     <DashboardLayout>
-      <Header title="Reports" subtitle="Analyze your financial data" />
+      <Header title="Informes" subtitle="Analiza tus datos financieros" />
 
       <section className="dashboard-content">
         {/* Grid de reportes */}
@@ -118,9 +118,9 @@ const ReportsPage = () => {
               borderBottom: '1px solid #2c3444',
               paddingBottom: '10px'
             }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Cash Flow Over Time</h3>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Flujo de efectivo en el tiempo</h3>
               <span style={{ color: 'var(--color-success)' }}>
-                {formatCurrency(summary.total_balance || 0)} Net
+                {formatCurrency(summary.total_balance || 0)} Neto
               </span>
             </div>
             <div style={{ 
@@ -147,12 +147,12 @@ const ReportsPage = () => {
               borderBottom: '1px solid #2c3444',
               paddingBottom: '10px'
             }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Top 5 Spending Categories</h3>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Top 5 categorías de gasto</h3>
               <button className="btn btn-text" style={{ 
                 color: 'var(--color-primary)', 
                 fontSize: '0.85rem' 
               }}>
-                View All
+                Ver todo
               </button>
             </div>
 
@@ -202,7 +202,7 @@ const ReportsPage = () => {
             paddingBottom: '10px'
           }}>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>
-              Income vs. Expenses Monthly Trend
+              Tendencia mensual: ingresos vs gastos
             </h3>
             <span style={{ fontSize: '0.9rem', color: '#9fa6ad' }}>
               Oct 2024 - Oct 2025

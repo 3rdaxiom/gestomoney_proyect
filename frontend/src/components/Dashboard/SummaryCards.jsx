@@ -15,21 +15,21 @@ const SummaryCards = ({ summary }) => {
   return (
     <div className="summary-cards-grid">
       <div className="summary-card">
-        <span className="card-title">Total Balance</span>
+        <span className="card-title">Saldo total</span>
         <span className="card-value balance">
           {formatCurrency(total_balance)}
         </span>
         <span className={`card-trend ${balance_change >= 0 ? 'positive' : 'negative'}`}>
-          {balance_change >= 0 ? '+' : ''}{(balance_change * 100).toFixed(1)}% vs last month
+          {balance_change >= 0 ? '+' : ''}{(balance_change * 100).toFixed(1)}% respecto al mes anterior
         </span>
       </div>
 
       <div className="summary-card">
-        <span className="card-title">Monthly Income</span>
+        <span className="card-title">Ingresos mensuales</span>
         <span className="card-value income">
           {formatCurrency(monthly_income)}
         </span>
-        <span className="card-trend positive">+0.1% vs last month</span>
+        <span className="card-trend positive">+0.1% respecto al mes anterior</span>
       </div>
 
       <div className="summary-card">
@@ -37,7 +37,7 @@ const SummaryCards = ({ summary }) => {
         <span className="card-value expense">
           {formatCurrency(monthly_expenses)}
         </span>
-        <span className="card-trend negative">-1.7% vs last month</span>
+        <span className="card-trend negative">-1.7% vs respecto al mes anterior</span>
       </div>
     </div>
   );

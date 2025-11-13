@@ -5,7 +5,7 @@ const Header = ({ title, subtitle, showFilters = false, onQuickAdd }) => {
   const { user } = useAuth();
 
   const getFirstName = (fullName) => {
-    if (!fullName) return 'User';
+    if (!fullName) return 'Usuario';
     return fullName.split(' ')[0];
   };
 
@@ -13,7 +13,7 @@ const Header = ({ title, subtitle, showFilters = false, onQuickAdd }) => {
     <header className="app-header">
       <div className="header-greeting">
         <h2 className="welcome-text">
-          {title || `Welcome back, ${getFirstName(user?.name)}!`}
+          {title || `¡Bienvenido de nuevo, ${getFirstName(user?.name)}!`}
         </h2>
         {subtitle && <p className="summary-text">{subtitle}</p>}
       </div>
@@ -32,7 +32,7 @@ const Header = ({ title, subtitle, showFilters = false, onQuickAdd }) => {
 
         {onQuickAdd && (
           <button className="btn btn-primary quick-add-btn" onClick={onQuickAdd}>
-            + Quick Add
+            + Añadir rápido
           </button>
         )}
       </div>

@@ -48,11 +48,11 @@ const RegisterPage = () => {
     let strength = { score: 0, text: '', class: 'weak' };
 
     if (score >= 4) {
-      strength = { score: 4, text: 'Strong', class: 'strong' };
+      strength = { score: 4, text: 'Fuerte', class: 'strong' };
     } else if (score >= 2) {
-      strength = { score: score, text: 'Medium', class: 'medium' };
+      strength = { score: score, text: 'Media', class: 'medium' };
     } else if (password.length > 0) {
-      strength = { score: 1, text: 'Weak', class: 'weak' };
+      strength = { score: 1, text: 'Débil', class: 'weak' };
     }
 
     setPasswordStrength(strength);
@@ -104,7 +104,7 @@ const RegisterPage = () => {
         <div className="auth-info-panel register-info">
           <div className="logo">Gestomoney</div>
           <p className="tagline">
-            Start managing your finances with clarity. Create your free account.
+            Comienza a gestionar tus finanzas con claridad. Crea tu cuenta gratuita.
           </p>
           <div className="auth-image-placeholder">
             <div style={{
@@ -124,30 +124,30 @@ const RegisterPage = () => {
 
         {/* Panel Derecho - Formulario */}
         <div className="auth-form-panel">
-          <h2 className="auth-title">Welcome to Gestomoney</h2>
+          <h2 className="auth-title">Bienvenido a Gestomoney</h2>
 
           {/* Botones de login social (opcional - sin funcionalidad por ahora) */}
           <div className="social-login-group">
             <button type="button" className="btn-social btn-google">
               <span style={{ marginRight: '8px' }}>🔍</span>
-              Sign up with Google
+              Regístrate con Google
             </button>
             <button type="button" className="btn-social btn-apple">
               <span style={{ marginRight: '8px' }}>🍎</span>
-              Sign up with Apple
+              Regístrate con Apple
             </button>
           </div>
 
-          <div className="divider">Or continue with</div>
+          <div className="divider">O continúa con</div>
 
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
-              <label htmlFor="fullName">Full Name</label>
+              <label htmlFor="fullName">Nombre completo</label>
               <input
                 type="text"
                 id="fullName"
                 name="fullName"
-                placeholder="Enter your full name"
+                placeholder="Introduce tu nombre completo"
                 value={formData.fullName}
                 onChange={handleChange}
                 required
@@ -155,12 +155,12 @@ const RegisterPage = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email address</label>
+              <label htmlFor="email">Correo electrónico</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Enter your email address"
+                placeholder="Introduce tu correo electrónico"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -168,13 +168,13 @@ const RegisterPage = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Contraseña</label>
               <div className="password-input-group">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   name="password"
-                  placeholder="Create a password"
+                  placeholder="Crea una contraseña"
                   value={formData.password}
                   onChange={handleChange}
                   required
@@ -197,12 +197,12 @@ const RegisterPage = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirmar contraseña</label>
               <input
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
-                placeholder="Confirm your password"
+                placeholder="Confirma tu contraseña"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
@@ -218,13 +218,13 @@ const RegisterPage = () => {
                   checked={formData.terms}
                   onChange={handleChange}
                 />
-                I agree to the{' '}
+                Acepto los{' '}
                 <a href="#" style={{ color: 'var(--color-primary)' }}>
-                  Terms of Service
+                  Términos del servicio
                 </a>{' '}
-                and{' '}
+                y la{' '}
                 <a href="#" style={{ color: 'var(--color-primary)' }}>
-                  Privacy Policy
+                  Política de privacidad
                 </a>
                 .
               </label>
@@ -235,11 +235,11 @@ const RegisterPage = () => {
               className="btn btn-login-primary"
               disabled={loading}
             >
-              {loading ? 'Creating Account...' : 'Create Account'}
+              {loading ? 'Creando cuenta...' : 'Crear cuenta'}
             </button>
 
             <div className="form-footer">
-              Already have an account? <Link to="/login">Log In</Link>
+              ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
             </div>
           </form>
         </div>
