@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { showSuccess, showError } from '../utils/notifications';
+import PasswordInput from '../components/Common/PasswordInput';
 import '../assets/styles/auth.css';
 
 const LoginPage = () => {
@@ -15,7 +16,6 @@ const LoginPage = () => {
     rememberMe: false,
   });
 
-  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -77,23 +77,14 @@ const LoginPage = () => {
 
             <div className="form-group">
               <label htmlFor="password">Contraseña</label>
-              <div className="password-input-group">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  id="password"
-                  name="password"
-                  placeholder="Introduce tu contraseña"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-                <span
-                  className="password-toggle"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? '🔒' : '👁️'}
-                </span>
-              </div>
+              <PasswordInput
+                id="password"
+                name="password"
+                placeholder="Introduce tu contraseña"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="form-options">

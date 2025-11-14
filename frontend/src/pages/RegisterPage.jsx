@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { showSuccess, showError } from '../utils/notifications';
-import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
+import PasswordInput from '../components/Common/PasswordInput';
 import '../assets/styles/auth.css';
 
 const RegisterPage = () => {
@@ -18,7 +18,6 @@ const RegisterPage = () => {
     terms: false,
   });
 
-  const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState({
     score: 0,
     text: '',
@@ -126,17 +125,14 @@ const RegisterPage = () => {
 
             <div className="form-group">
               <label htmlFor="password">Contraseña</label>
-              <div className="password-input-group">
-                <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Crea una contraseña" value={formData.password} onChange={handleChange} required/>
-                
-                <button type="button" className="password-toggle password-toggle-btn" onClick={() => setShowPassword(!showPassword)} aria-pressed={showPassword} aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} title={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} >
-                  {showPassword ? (
-                    <MdVisibilityOff size={20}  />
-                  ) : (
-                    <MdVisibility size={20}  />
-                  )}
-                </button>
-              </div>
+              <PasswordInput
+                id="password"
+                name="password"
+                placeholder="Crea una contraseña"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
 
               {/* fuerza de contraseña */}
               {formData.password && (
