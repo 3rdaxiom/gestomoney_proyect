@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-/* Panel Izquierdo (Info) */
+/* Imagen izq registro (Info) */
 .auth-info-panel {
     flex: 1;
     background-color: #f4f6f9;
@@ -28,6 +28,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    background-image: url('../../img/registro2.jpg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Imagen del login*/
+.auth-info-panel--login {
+    background-image: url('../../img/registro4.jpg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .auth-info-panel .logo {
@@ -35,6 +47,7 @@
     font-weight: 700;
     color: var(--color-dark-bg);
     margin-bottom: var(--spacing-xs);
+
 }
 
 .auth-info-panel .tagline {
@@ -42,6 +55,8 @@
     color: #6c757d;
     margin-bottom: var(--spacing-lg);
 }
+
+
 
 .auth-image-placeholder {
     width: 100%;
@@ -54,6 +69,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+    background-color: red;
 }
 
 /* Panel Derecho (Formulario) */

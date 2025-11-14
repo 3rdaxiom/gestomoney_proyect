@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { showSuccess, showError } from '../utils/notifications';
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 import '../assets/styles/auth.css';
 
 const RegisterPage = () => {
@@ -99,93 +100,45 @@ const RegisterPage = () => {
 
   return (
     <div className="auth-body">
+      {/* contenedor principal */}
       <div className="auth-container">
         {/* Panel Izquierdo */}
         <div className="auth-info-panel register-info">
-          <div className="logo">Gestomoney</div>
-          <p className="tagline">
-            Comienza a gestionar tus finanzas con claridad. Crea tu cuenta gratuita.
-          </p>
-          <div className="auth-image-placeholder">
-            <div style={{
-              width: '100%',
-              height: '200px',
-              backgroundColor: '#e9ecef',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '3rem'
-            }}>
-              📊
-            </div>
-          </div>
+          {/* imagen izq */}
         </div>
 
         {/* Panel Derecho - Formulario */}
         <div className="auth-form-panel">
           <h2 className="auth-title">Bienvenido a Gestomoney</h2>
 
-          {/* Botones de login social (opcional - sin funcionalidad por ahora) */}
-          <div className="social-login-group">
-            <button type="button" className="btn-social btn-google">
-              <span style={{ marginRight: '8px' }}>🔍</span>
-              Regístrate con Google
-            </button>
-            <button type="button" className="btn-social btn-apple">
-              <span style={{ marginRight: '8px' }}>🍎</span>
-              Regístrate con Apple
-            </button>
-          </div>
-
-          <div className="divider">O continúa con</div>
-
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
               <label htmlFor="fullName">Nombre completo</label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="Introduce tu nombre completo"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
+              <input type="text" id="fullName" name="fullName" placeholder="Introduce tu nombre completo" value={formData.fullName} onChange={handleChange} required
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Correo electrónico</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Introduce tu correo electrónico"
-                value={formData.email}
-                onChange={handleChange}
-                required
+              <input type="email" id="email"  name="email" placeholder="Introduce tu correo electrónico" value={formData.email} onChange={handleChange} required
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="password">Contraseña</label>
               <div className="password-input-group">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  id="password"
-                  name="password"
-                  placeholder="Crea una contraseña"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-                <span
-                  className="password-toggle"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? '🔒' : '👁️'}
-                </span>
+                <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Crea una contraseña" value={formData.password} onChange={handleChange} required/>
+                
+                <button type="button" className="password-toggle password-toggle-btn" onClick={() => setShowPassword(!showPassword)} aria-pressed={showPassword} aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} title={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} >
+                  {showPassword ? (
+                    <MdVisibilityOff size={20}  />
+                  ) : (
+                    <MdVisibility size={20}  />
+                  )}
+                </button>
               </div>
+
+              {/* fuerza de contraseña */}
               {formData.password && (
                 <div className="password-strength-indicator">
                   <div className={`strength-bar ${passwordStrength.class}`}></div>

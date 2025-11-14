@@ -49,25 +49,9 @@ const LoginPage = () => {
     <div className="auth-body">
       <div className="auth-container">
         {/* Panel Izquierdo */}
-        <div className="auth-info-panel">
-          <div className="logo">Gestomoney</div>
-          <p className="tagline">
-            Claridad para tus finanzas. Toma el control de tu dinero.
-          </p>
-          <div className="auth-image-placeholder">
-            <div style={{
-              width: '100%',
-              height: '200px',
-              backgroundColor: '#e9ecef',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '3rem'
-            }}>
-              💰
-            </div>
-          </div>
+        <div className="auth-info-panel auth-info-panel--login">
+          
+          
         </div>
 
         {/* Panel Derecho - Formulario */}
