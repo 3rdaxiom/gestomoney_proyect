@@ -29,19 +29,7 @@ const LandingPage = () => {
               <Link to="/register" className="btn btn-primary btn-lg">Regístrate gratis</Link>
             </div>
             <div className="hero-image">
-              <div style={{
-                width: '100%',
-                height: '400px',
-                backgroundColor: '#e9ecef',
-                borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#6c757d',
-                fontSize: '1.2rem'
-              }}>
-                📊 Vista previa del panel
-              </div>
+              {/* imagen hero */}
             </div>
           </div>
         </section>
@@ -75,13 +63,15 @@ const LandingPage = () => {
           <div className="container">
             <h2 className="section-title">Visualiza tus hábitos de gasto</h2>
             <p className="section-subtitle">Nuestros gráficos interactivos proporcionan claridad e información sobre a dónde va tu dinero, ayudándote a tomar decisiones financieras más inteligentes.</p>
-            <div className="visualization-placeholder">📈 Vista previa del gráfico interactivo</div>
+            <div className="visualization-placeholder">
+              {/* Aquí iría una imagen  */}
+            </div>
           </div>
         </section>
 
         <section className="testimonials" id="testimonials">
           <div className="container">
-            <h2 className="section-title">Valorado por usuarios de todo el mundo</h2>
+            <h2 className="section-title section-title-testimonials">Valorado por usuarios de todo el mundo</h2>
             <div className="testimonials-grid">
               <div className="testimonial-card">
                 <p className="quote">"Por fin me siento organizado con mi dinero. Entender a dónde van mis ingresos es mucho más claro y las visualizaciones son un cambio radical."</p>
