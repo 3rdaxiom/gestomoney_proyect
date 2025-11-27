@@ -354,6 +354,16 @@
     }
 }
 
+@media (max-width: 375px) {
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+
+    .auth-container * {
+        margin: 3px 0px;
+    }
+}
 
 @media (max-width: 320px) {
 
@@ -361,16 +371,18 @@
         max-width: 97%;
     }
 
+
+   
     .auth-form {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 4px;
     }
 
     .auth-form-panel {
         padding: var(--spacing-sm);
         gap: 10px;
-        
+
     }
 
     .auth-title {
@@ -381,7 +393,6 @@
 
     .auth-subtitle {
         font-size: 14px;
-        margin: 0px 0 15px 0;
         text-align: center;
     }
 
