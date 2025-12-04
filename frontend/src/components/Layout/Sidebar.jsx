@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
   const { user, logout } = useAuth();
 
@@ -19,15 +19,15 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div>
         <div className="sidebar-header">
           <span className="logo">GESTOMONEY</span>
         </div>
 
         {/* USUARIO - SOLO INFORMATIVO (ARRIBA) */}
-        <div style={{ 
-          padding: '12px 15px', 
+        <div style={{
+          padding: '12px 15px',
           marginBottom: '10px',
           borderBottom: '1px solid #2c3444'
         }}>
@@ -36,9 +36,9 @@ const Sidebar = () => {
               {getInitials(user?.name)}
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <p style={{ 
-                margin: 0, 
-                fontSize: '0.9rem', 
+              <p style={{
+                margin: 0,
+                fontSize: '0.9rem',
                 fontWeight: 500,
                 color: 'var(--color-text-light)',
                 whiteSpace: 'nowrap',
@@ -47,15 +47,15 @@ const Sidebar = () => {
               }}>
                 {user?.name || 'Usuario'}
               </p>
-              <p style={{ 
-                margin: '2px 0 0 0', 
-                fontSize: '0.75rem', 
+              <p style={{
+                margin: '2px 0 0 0',
+                fontSize: '0.75rem',
                 color: '#9fa6ad',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis'
               }}>
-                user@gestomoney.com
+                {user?.email || 'Correo electrónico'}
               </p>
             </div>
           </div>
@@ -63,17 +63,19 @@ const Sidebar = () => {
 
         {/* NAVEGACIÓN PRINCIPAL */}
         <nav className="sidebar-nav">
-          <Link 
-            to="/dashboard" 
+          <Link
+            to="/dashboard"
             className={`nav-item ${isActive('/dashboard') ? 'active' : ''}`}
+            onClick={toggleSidebar} // Cerrar sidebar al hacer clic en un enlace
           >
             <span className="icon">🏠</span>
             Panel
           </Link>
 
-          <Link 
-            to="/transactions" 
+          <Link
+            to="/transactions"
             className={`nav-item ${isActive('/transactions') ? 'active' : ''}`}
+            onClick={toggleSidebar}
           >
             <span className="icon">💸</span>
             Transacciones
@@ -85,9 +87,10 @@ const Sidebar = () => {
             <span className="badge">Próximamente</span>
           </div>
 
-          <Link 
-            to="/reports" 
+          <Link
+            to="/reports"
             className={`nav-item ${isActive('/reports') ? 'active' : ''}`}
+            onClick={toggleSidebar}
           >
             <span className="icon">📈</span>
             Reportes
@@ -97,15 +100,16 @@ const Sidebar = () => {
 
       {/* SETTINGS Y LOGOUT (JUNTOS AL FINAL) */}
       <div style={{ borderTop: '1px solid #2c3444', paddingTop: '5px' }}>
-        <Link 
-          to="/settings" 
+        <Link
+          to="/settings"
           className={`nav-item ${isActive('/settings') ? 'active' : ''}`}
+          onClick={toggleSidebar}
         >
           <span className="icon">⚙️</span>
           Configuración
         </Link>
 
-        <div className="nav-item" onClick={logout}>
+        <div className="nav-item" onClick={() => { logout(); toggleSidebar(); }}>
           <span className="icon">🚪</span>
           Cerrar sesión
         </div>
