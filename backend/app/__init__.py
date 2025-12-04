@@ -22,9 +22,14 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     migrate.init_app(app, db)
     
+    # --- CONFIGURACIÓN DE CORS ACTUALIZADA ---
     CORS(app, resources={
-        r"/api/*": {
-            "origins": ["http://localhost:5173", "http://127.0.0.1:5173"],
+        r"/*": {  # Se cambió a "/*" para permitir todas las rutas, no solo /api/
+            "origins": [
+                "http://localhost:5173",       # Para desarrollo local
+                "http://127.0.0.1:5173",       # Para desarrollo local (alternativo)
+                "https://radiant-smile-production.up.railway.app"  # TU DOMINIO DE RAILWAY
+            ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "supports_credentials": True
